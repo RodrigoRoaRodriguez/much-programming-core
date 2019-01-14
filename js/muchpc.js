@@ -949,7 +949,7 @@ var app = new Vue({
                         console.log(p);
                         console.log(k.profiles[p].fn)
                     });
-                    UIkit.notification('<i class="fas fa-check"></i> Copyed profile L'+_this.active_profile+' to L0.', {pos: 'bottom-right',status:'success'}).$el.classList.add('uk-box-shadow-large');
+                    UIkit.notification('<i class="fas fa-check"></i> Copied profile L'+_this.active_profile+' to L0.', {pos: 'bottom-right',status:'success'}).$el.classList.add('uk-box-shadow-large');
                     _this.active_profile = 0;
                 },
                 "Clone to L1": function () {
@@ -960,7 +960,7 @@ var app = new Vue({
                         k.profiles[1].fn = k.profiles[p].fn
                         k.profiles[1].fn1 = k.profiles[p].fn1
                     });
-                    UIkit.notification('<i class="fas fa-check"></i> Copyed profile L'+_this.active_profile+' to L1.', {pos: 'bottom-right',status:'success'}).$el.classList.add('uk-box-shadow-large');
+                    UIkit.notification('<i class="fas fa-check"></i> Copied profile L'+_this.active_profile+' to L1.', {pos: 'bottom-right',status:'success'}).$el.classList.add('uk-box-shadow-large');
                     _this.active_profile = 1;
                 },
                 "Clone to L2": function () {
@@ -970,7 +970,7 @@ var app = new Vue({
                         k.profiles[2].fn = k.profiles[p].fn
                         k.profiles[2].fn1 = k.profiles[p].fn1
                     });
-                    UIkit.notification('<i class="fas fa-check"></i> Copyed profile L'+_this.active_profile+' to L2.', {pos: 'bottom-right',status:'success'}).$el.classList.add('uk-box-shadow-large');
+                    UIkit.notification('<i class="fas fa-check"></i> Copied profile L'+_this.active_profile+' to L2.', {pos: 'bottom-right',status:'success'}).$el.classList.add('uk-box-shadow-large');
                     _this.active_profile = 2;
                 },
                 "Clone to L3": function () {
@@ -980,7 +980,7 @@ var app = new Vue({
                         k.profiles[3].fn = k.profiles[p].fn
                         k.profiles[3].fn1 = k.profiles[p].fn1
                     });
-                    UIkit.notification('<i class="fas fa-check"></i> Copyed profile L'+_this.active_profile+' to L3.', {pos: 'bottom-right',status:'success'}).$el.classList.add('uk-box-shadow-large');
+                    UIkit.notification('<i class="fas fa-check"></i> Copied profile L'+_this.active_profile+' to L3.', {pos: 'bottom-right',status:'success'}).$el.classList.add('uk-box-shadow-large');
                     _this.active_profile = 3;
                 },
 
