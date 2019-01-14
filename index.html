@@ -9,11 +9,11 @@
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/css/uikit.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.26/css/uikit.min.css" />
     <link rel="stylesheet" href="css/muchpc.css?2" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.16/js/uikit-icons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.26/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.26/js/uikit-icons.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/2.15.0/vuedraggable.min.js"></script>
@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    <div class="background" id="app" uk-height-viewport="expand">
+    <div class="uk-light" id="app" uk-height-viewport="expand">
         <div class="page uk-box-shadow-large">
             <nav class="uk-navbar-container uk-box-shadow-medium" uk-navbar>
                 <div class="uk-navbar-left">
@@ -50,8 +50,8 @@
             </nav>
 
             <div class="uk-padding-small uk-text-right">
-                <button class="uk-button-small uk-button-default uk-box-shadow-small" @click="openFile(importFile)">Open JSON</button>
-                <button class="uk-button-small uk-button-default uk-box-shadow-small" @click="exportFile()">Save as
+                <button class="uk-button-small uk-button-default  .uk-light uk-box-shadow-small" @click="openFile(importFile)">Open JSON</button>
+                <button class="uk-button-small uk-button-default  .uk-light uk-box-shadow-small" @click="exportFile()">Save as
                     JSON</button>
                 <button class="uk-button-small uk-button-primary uk-box-shadow-small" @click="generate()">Generate
                     Binary File</button>
@@ -89,7 +89,7 @@
                                 firmware</a>
                             <a class="uk-button uk-button-default" target="_blank" href="http://www.vortexgear.tw/db/upload/webdata4/6vortex_201861123444447399.pdf">Manual</a>
                         </p>
-                        <h4>Changelog <button class="uk-button uk-button-default uk-button-small" uk-toggle="target: #old-changelog; animation: uk-animation-fade" type="button">History</button></h4>
+                        <h4>Changelog <button class="uk-button uk-button-default  .uk-light uk-button-small" uk-toggle="target: #old-changelog; animation: uk-animation-fade" type="button">History</button></h4>
                         <div class="uk-margin">
                             <div class="uk-card uk-card-body uk-box-shadow-medium uk-card-secondary uk-card-small">
                                 <h3 class="uk-card-title">v2.8</h3>
@@ -366,7 +366,7 @@
                 </div>
                 <div class="uk-margin">
                     <button class="uk-button uk-button-secondary" :disabled="binding_key==currentKeyDefault" @click="quickBind(currentKeyDefault)">Default</button>
-                    <button class="uk-button uk-button-default uk-modal-close">Cancel</button>
+                    <button class="uk-button uk-button-default  .uk-light uk-modal-close">Cancel</button>
                     
                     <div v-if="isUnbindable(currentKeyDefault)" class="uk-align-right key-border key small fk-1x1" :class="{selected: binding_key == currentKeyDefault}"
                         @click="binding_key = currentKeyDefault;" uk-tooltip="There's no keycode of this function. However you can use this key to restore its original function.">
@@ -442,7 +442,7 @@
                     </draggable>
                     <div class="uk-margin">
                         <button class="uk-button uk-button-primary" :disabled="editing_macro.title.length == 0 || editing_macro.events.length ==0" @click="saveMacro()">Confirm</button>
-                        <button class="uk-button uk-button-default uk-modal-close" :class="[{'uk-button-danger': new_macro}]">Cancel</button>
+                        <button class="uk-button uk-button-default  .uk-light uk-modal-close" :class="[{'uk-button-danger': new_macro}]">Cancel</button>
                         <span class="uk-margin uk-text-meta">You can drag each key event to change its order.</span>
                         <div class="uk-align-right">
                             <button v-if="!new_macro" @click="removeMacro()" class="uk-button uk-button-danger">Delete</button>
@@ -452,7 +452,6 @@
             </div>
         </div>
         <input id="importFile" type="file" hidden>
-    </div>
     <script src="js/muchpc.js?2.8"></script>
 </body>
 

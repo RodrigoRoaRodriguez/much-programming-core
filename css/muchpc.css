@@ -1,10 +1,19 @@
+html {
+    background: #222228;
+    color: #ddd;
+}
+
 /* Vue UIKit compatibility fix */
 .uk-icon>svg:nth-child(2) {display: none;}
 
+nav.uk-navbar-container.uk-navbar {
+    background: #33333a;
+}
+
 .key-border {
-    box-shadow:0px 0px 0px 1px black inset;
-    border-radius: 3px;
-    background: #dddddd;
+    margin: .3mm;
+    border-radius: 6px;
+    background: #3d405a;
     display: inline-block;
 }
 
@@ -15,23 +24,12 @@
 .key-non-interactive:hover {
     box-shadow:0px 0px 0px 1px black inset;
 }
-
-.key-border:active {
-    box-shadow:0px 0px 1px 2px #2222cc inset;
-}
 .key-non-interactive:active {
     box-shadow:0px 0px 0px 1px black inset;
 }
 
-.background {
-    background-color: #f0f0f0;
-}
-
 .page {
     margin: auto;
-    max-width: 10.25in;
-    min-width: 10.25in;
-    background-color: #ffffff;
 }
 
 .key-selector .uk-modal-dialog {
@@ -74,8 +72,8 @@
 .key-container {
     margin-left:auto;
     margin-right:auto;
-    margin-top: 2mm;
-    background: #ffffff;
+    margin-top: 1mm;
+    background: #446;
     height: 12mm;
     overflow: hidden;
 }
@@ -83,38 +81,38 @@
 .key-legend-main {
     white-space: nowrap;
     text-align: center;
-    color: black;
+    color: #eee;
 }
 
 .color-pn {
-    color: #edad00;
+    color: #ffc107;
 }
 
 .color-fn {
-    color: blue;
+    color: #4ec3ff;
 }
 
 .color-fn1 {
-    color: red;
+    color: #ff6666;
 }
 
 .key-legend-pn {
     position: absolute;
-    top: 9.5mm;
-    left: 3.5mm;
+    top: 7mm;
+    left: 3mm;
     font-size: 9pt;
 }
 
 .key-legend-fn1 {
     position: absolute;
-    left: 1mm;
-    top: 13.5mm;
+    left: 2mm;
+    top: 12mm;
     font-size: 9pt;
 }
 .key-legend-fn {
     position: absolute;
-    top: 13.5mm;
-    right: 1mm;
+    top: 12mm;
+    right: 2mm;
     font-size: 9pt;
 }
 
@@ -129,12 +127,11 @@
 }
 
 .key.selected {
-    box-shadow:0px 0px 0px 1px blue inset;
-    background: #ccccdd;
+    background: #335;
 }
 
 .key.selected .key-container {
-    background: #eeeeff;
+    background: #363688;
 }
 
 .key-1x1 {
@@ -326,7 +323,7 @@
     height: 16mm;
     display: inline-block;
     border-radius: 5px;
-    background: #dddddd;
+    background: #223;
     overflow: hidden;
     margin-left: 1px;
     -moz-user-select: -moz-none;
