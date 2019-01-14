@@ -329,7 +329,7 @@
                     </div>
                     <div class="row" v-for="(keys, index) in fullKeyboard" :row="index">
                         <div v-for="key in keys" class="key-border key small" v-if="key.code!=null && (selected_key_layer == 0 || (key.code != 'FN' && key.code != 'PN' && key.code != 'FN1'))"
-                            @click="binding_key=key.code" :class="['fk-'+key.type, {selected: binding_key == key.code}]">
+                            @click="quickBind(key.code)" :class="['fk-'+key.type, {selected: binding_key == key.code}]">
                             <div class="key-container">
                                 <div class="key-legend-main">
                                     <span v-html="keyLegend[key.code]"></span>
@@ -343,7 +343,7 @@
                     <div v-for="(macro, index) in macros" class="uk-inline">
                         <div class="macro-selection-border uk-box-shadow-medium uk-box-shadow-hover-large uk-padding-small"
                             :class="{'uk-card-primary':binding_key == 'Macro' && binding_macro == macro.id }"
-                            @click="binding_key = 'Macro'; binding_macro = macro.id">
+                            @click="quickBind('Macro'); binding_macro = macro.id">
                             <div class="uk-text-meta">
                                 <i class="fas fa-sync-alt"></i>
                                 <span v-if="macro.type == 1">Once</span>
@@ -365,8 +365,7 @@
                     </div>
                 </div>
                 <div class="uk-margin">
-                    <button class="uk-button uk-button-primary" @click="confirmBind()">Confirm</button>
-                    <button class="uk-button uk-button-secondary" :disabled="binding_key==currentKeyDefault" @click="binding_key=currentKeyDefault">Default</button>
+                    <button class="uk-button uk-button-secondary" :disabled="binding_key==currentKeyDefault" @click="quickBind(currentKeyDefault)">Default</button>
                     <button class="uk-button uk-button-default uk-modal-close">Cancel</button>
                     
                     <div v-if="isUnbindable(currentKeyDefault)" class="uk-align-right key-border key small fk-1x1" :class="{selected: binding_key == currentKeyDefault}"

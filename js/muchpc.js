@@ -1211,26 +1211,13 @@ var app = new Vue({
             }
             UIkit.modal('#key-selector-modal', {bgClose: null}).show();
         },
-        confirmBind: function () {
+        quickBind: function (key) {
             var profile = this.selected_key.profiles[this.active_profile];
-            switch (this.selected_key_layer) {
-                case 0:
-                profile.bind = this.binding_key;
-                profile.bind_macro = (this.binding_key == "Macro") ? this.binding_macro : -1;
-                break;
-                case 1:
-                profile.pn = this.binding_key;
-                profile.pn_macro = (this.binding_key == "Macro") ? this.binding_macro : -1;
-                break;
-                case 2:
-                profile.fn = this.binding_key;
-                profile.fn_macro = (this.binding_key == "Macro") ? this.binding_macro : -1;
-                break;
-                case 3:
-                profile.fn1 = this.binding_key;
-                profile.fn1_macro = (this.binding_key == "Macro") ? this.binding_macro : -1;
-                break;
-            }
+            const layers = ['bind', 'pn', 'fn', 'fn1'];
+            
+            profile[layers[this.selected_key_layer]] = key;
+            profile[layers[this.selected_key_layer]+'_macro'] = (key == "Macro") ? this.binding_macro : -1;
+
             UIkit.modal('#key-selector-modal').hide()
         },
         addMacro: function () {
