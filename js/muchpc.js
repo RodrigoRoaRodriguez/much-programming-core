@@ -940,21 +940,16 @@ var app = new Vue({
                 },
                 "Clone to L0": function () {
                     _run_through_rows(function(k, p) {
-                        console.log(0);
-                        console.log(k.profiles[0].fn);
                         k.profiles[0].bind = k.profiles[p].bind
                         k.profiles[0].pn = k.profiles[p].pn
                         k.profiles[0].fn = k.profiles[p].fn
                         k.profiles[0].fn1 = k.profiles[p].fn1
-                        console.log(p);
-                        console.log(k.profiles[p].fn)
                     });
                     UIkit.notification('<i class="fas fa-check"></i> Copied profile L'+_this.active_profile+' to L0.', {pos: 'bottom-right',status:'success'}).$el.classList.add('uk-box-shadow-large');
                     _this.active_profile = 0;
                 },
                 "Clone to L1": function () {
                     _run_through_rows(function(k, p) {
-                        console.log(k);
                         k.profiles[1].bind = k.profiles[p].bind
                         k.profiles[1].pn = k.profiles[p].pn
                         k.profiles[1].fn = k.profiles[p].fn
@@ -1212,11 +1207,19 @@ var app = new Vue({
             UIkit.modal('#key-selector-modal', {bgClose: null}).show();
         },
         quickBind: function (key) {
-            var profile = this.selected_key.profiles[this.active_profile];
-            const layers = ['bind', 'pn', 'fn', 'fn1'];
+            const profile = this.selected_key.profiles[this.active_profile]
+            const layers = ['bind', 'pn', 'fn', 'fn1']
+
+            const bindToLayer =  (layer) => {
+                profile[layer] = key
+                profile[layer+'_macro'] = (key == "Macro") ? this.binding_macro : -1;
+            }
             
-            profile[layers[this.selected_key_layer]] = key;
-            profile[layers[this.selected_key_layer]+'_macro'] = (key == "Macro") ? this.binding_macro : -1;
+            if([0,1,2,3].includes(this.selected_key_layer)){
+                bindToLayer(layers[this.selected_key_layer])
+            } else {
+                layers.forEach(bindToLayer)
+            }
 
             UIkit.modal('#key-selector-modal').hide()
         },

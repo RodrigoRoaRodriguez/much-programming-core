@@ -261,7 +261,7 @@
                                     <div class="uk-text-meta">
                                         <i class="fas fa-sync-alt"></i>
                                         <span v-if="macro.type == 1">Once</span>
-                                        <span v-if="macro.type == 2">Until release</span>
+                                        <span v-if="macro.type == 2">Until release</span>l
                                         <span v-if="macro.type == 3">Toggle</span>
                                         <span v-if="macro.type == 4">{{ macro.repeats }} times</span>
                                     </div>
@@ -289,15 +289,17 @@
                         <div v-else-if="selected_key.locked" class="uk-alert-danger" uk-alert>
                             Sorry, this key cannot be changed.
                         </div>
-                        <div v-else class="uk-column-1-2">
-                            <p><span>Base Key: </span> <button class="uk-button uk-button-default" @click="bindKey(0)">{{
-                                    keyName[currentKeyProfile.bind] }}</button></p>
-                            <p v-if="currentKeyHasLayers"><span class="color-pn">Pn Layer: </span> <button class="uk-button uk-button-default"
-                                    @click="bindKey(1)">{{ keyName[currentKeyProfile.pn] }}</button></p>
-                            <p v-if="currentKeyHasLayers"><span class="color-fn">Fn Layer: </span> <button class="uk-button uk-button-default"
-                                    @click="bindKey(2)">{{ keyName[currentKeyProfile.fn] }}</button></p>
-                            <p v-if="currentKeyHasLayers"><span class="color-fn1">Fn1 Layer: </span> <button class="uk-button uk-button-default"
-                                    @click="bindKey(3)">{{ keyName[currentKeyProfile.fn1] }}</button></p>
+                        <div v-else>
+                            <button class="uk-button uk-button-default" @click="bindKey()"> All </button>
+                            <span>Base Key: </span> <button class="uk-button uk-button-default" @click="bindKey(0)">{{
+                                    keyName[currentKeyProfile.bind] }}</button>
+                            <span v-if="currentKeyHasLayers" class="color-pn">Pn Layer: </span> <button class="uk-button uk-button-default"
+                                    @click="bindKey(1)">{{ keyName[currentKeyProfile.pn] }}</button>
+                            <span v-if="currentKeyHasLayers" class="color-fn">Fn Layer: </span> <button class="uk-button uk-button-default"
+                                    @click="bindKey(2)">{{ keyName[currentKeyProfile.fn] }}</button>
+                            <span v-if="currentKeyHasLayers" class="color-fn1">Fn1 Layer: </span> <button class="uk-button uk-button-default"
+                                    @click="bindKey(3)">{{ keyName[currentKeyProfile.fn1] }}</button>
+                             
                         </div>
                     </li>
                     <li>
